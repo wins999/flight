@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Full - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/full.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Name</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Registration
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" data-toggle="modal" data-target="#loginModal" href="#">Login</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Offers</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel">Login</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          
+        </div>
+        <div class="modal-body">
+
+          <form role="form" action="index.php" method="post">
+            <div class="row">
+              <div class="col-xs-3 col-sm-3 col-md-3">
+                <label>Username:</label>
+              </div>
+              <div class="col-xs-7 col-sm-7 col-md-7">
+                <div class="form-group">
+                  <input type="text" name="username" id="username" class="form-control input-sm" placeholder="Enter your username">
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="row">
+              <div class="col-xs-3 col-sm-3 col-md-3">
+                <label>Password:</label>
+              </div>
+              <div class="col-xs-7 col-sm-7 col-md-7">
+                <div class="form-group">
+                  <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-3 col-sm-3 col-md-3">
+                <label>Who are you:</label>
+              </div>
+
+              <div class="col-xs-7 col-sm-7 col-md-7">
+                <select class="custom-select" name="type">
+                  <option selected>Choose</option>
+                  <option value="student">User</option>
+                  <option value="sponsor">Admin</option>
+                </select>
+
+
+              </div>
+
+            </div>
+
+
+
+            <br>
+            <input type="submit" value="Login" name="login" class="btn btn-info btn-block">
+
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

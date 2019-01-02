@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Full - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <!-- Custom styles for this template -->
+    <link href="style/full.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Name</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" data-toggle="modal" data-target="#RegistrationModal" href="#">Registration
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" data-toggle="modal" data-target="#LoginModal" href="#">Login</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Offers</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Login</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                </div>
+                <div class="modal-body">
+
+                    <form role="form" action="index.php" method="post">
+                        <div class="row">
+                            <div class="col-xs-3 col-sm-3 col-md-3">
+                                <label>Username:</label>
+                            </div>
+                            <div class="col-xs-7 col-sm-7 col-md-7">
+                                <div class="form-group">
+                                    <input type="text" name="username" id="username" class="form-control input-sm"
+                                        placeholder="Enter your username">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="row">
+                            <div class="col-xs-3 col-sm-3 col-md-3">
+                                <label>Password:</label>
+                            </div>
+                            <div class="col-xs-7 col-sm-7 col-md-7">
+                                <div class="form-group">
+                                    <input type="password" name="password" id="password" class="form-control input-sm"
+                                        placeholder="Password">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-3 col-sm-3 col-md-3">
+                                <label>Who are you:</label>
+                            </div>
+
+                            <div class="col-xs-7 col-sm-7 col-md-7">
+                                <select class="custom-select" name="type">
+                                    <option selected>Choose</option>
+                                    <option value="student">User</option>
+                                    <option value="sponsor">Admin</option>
+                                </select>
+
+
+                            </div>
+
+                        </div>
+
+
+
+                        <br>
+                        <input type="submit" value="Login" name="login" class="btn btn-info btn-block">
+
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Registration Modal -->
+    <div class="modal fade" id="RegistrationModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">User Registration</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                </div>
+                <div class="modal-body">
+
+                    <form role="form" name="userregister" action="student.php" method="post" onsubmit="return studentvalidate()">
+                       
+                        <div class="row">
+                            <div class="col-xs-3 col-sm-3 col-md-3">
+                                <label>Title</label>
+                            </div>
+                            <div class="col-xs-7 col-sm-7 col-md-7">
+                                <div class="form-group">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                        <label class="form-check-label" for="inlineRadio1">Male</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                        <label class="form-check-label" for="inlineRadio2">Female</label>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-3 col-sm-3 col-md-3">
+                                <label>First Name:</label>
+                            </div>
+                            <div class="col-xs-7 col-sm-7 col-md-7">
+                                <div class="form-group">
+                                    <input type="text" name="first_name" id="first_name" class="form-control input-sm"
+                                        placeholder="First Name" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-3 col-sm-3 col-md-3">
+                                <label>Last Name:</label>
+                            </div>
+                            <div class="col-xs-7 col-sm-7 col-md-7">
+                                <div class="form-group">
+                                    <input type="text" name="last_name" id="last_name" class="form-control input-sm"
+                                        placeholder="LastName" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-3 col-sm-3 col-md-3">
+                                <label>DOB:</label>
+                            </div>
+                            <div class="col-xs-7 col-sm-7 col-md-7">
+                                <div class="form-group">
+                                    <input type="date" name="date" id="date" class="form-control input-sm"
+                                        placeholder="Date of Birth" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-3 col-sm-3 col-md-3">
+                                <label>Email:</label>
+                            </div>
+                            <div class="col-xs-7 col-sm-7 col-md-7">
+                                <div class="form-group">
+                                    <input type="email" name="email" id="email" class="form-control input-sm"
+                                        placeholder="Email Address" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Made using bootstrap select not normal bootstrap-->
+                        
+                        <div class="row">
+                            <div class="col-xs-3 col-sm-3 col-md-3">
+                                <label>Password:</label>
+                            </div>
+                            <div class="col-xs-7 col-sm-7 col-md-7">
+                                <div class="form-group">
+                                    <input type="password" name="password" id="password" class="form-control input-sm"
+                                        placeholder="Password" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-3 col-sm-3 col-md-3">
+                                <label>Confirm password:</label>
+                            </div>
+                            <div class="col-xs-7 col-sm-7 col-md-7">
+                                <div class="form-group">
+                                    <input type="password" name="password_confirmation" id="password_confirmation"
+                                        class="form-control input-sm" placeholder="Confirm Password"
+                                        required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-xs-3 col-sm-3 col-md-3">
+                                <label>Phone Number:</label>
+                            </div>
+                            <div class="col-xs-7 col-sm-7 col-md-7">
+                                <div class="form-group">
+                                    <input type="number" name="phoneNum" id="phoneNum" class="form-control input-sm"
+                                        placeholder="Enter Phone Number" required>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <input type="submit" value="Register" name="submit" class="btn btn-info btn-block">
+
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal end-->
+
+    <div class="modal fade" id="studentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Student Registration</h4>
+                </div>
+                <div class="modal-body">
+
+                    <form role="form" name="studentregister" action="student.php" method="post" onsubmit="return studentvalidate()">
+                        <div class="row">
+                            <div class="col-xs-3 col-sm-3 col-md-3">
+                                <label>Username:</label>
+                            </div>
+                            <div class="col-xs-7 col-sm-7 col-md-7">
+                                <div class="form-group">
+                                    <input type="text" name="username" id="username" class="form-control input-sm"
+                                        placeholder="Enter your username" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-3 col-sm-3 col-md-3">
+                                <label>First Name:</label>
+                            </div>
+                            <div class="col-xs-7 col-sm-7 col-md-7">
+                                <div class="form-group">
+                                    <input type="text" name="first_name" id="first_name" class="form-control input-sm"
+                                        placeholder="First Name" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-3 col-sm-3 col-md-3">
+                                <label>Last Name:</label>
+                            </div>
+                            <div class="col-xs-7 col-sm-7 col-md-7">
+                                <div class="form-group">
+                                    <input type="text" name="last_name" id="last_name" class="form-control input-sm"
+                                        placeholder="LastName" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-3 col-sm-3 col-md-3">
+                                <label>Email:</label>
+                            </div>
+                            <div class="col-xs-7 col-sm-7 col-md-7">
+                                <div class="form-group">
+                                    <input type="email" name="email" id="email" class="form-control input-sm"
+                                        placeholder="Email Address" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Made using bootstrap select not normal bootstrap-->
+                        <div class="row">
+                            <div class="col-xs-3 col-sm-3 col-md-3">
+                                <label>Year:</label>
+                            </div>
+
+                            <div class="col-xs-7 col-sm-7 col-md-7">
+                                <select class="selectpicker" name="year">
+                                    <option value="default">Select</option>
+                                    <option>F.E</option>
+                                    <option>S.E</option>
+                                    <option>T.E</option>
+                                    <option>B.E</option>
+
+                                </select>
+
+
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-xs-3 col-sm-3 col-md-3">
+                                <label>Stream:</label>
+                            </div>
+
+                            <div class="col-xs-7 col-sm-7 col-md-7">
+                                <select class="selectpicker" name="branch">
+                                    <option value="default">Select</option>
+                                    <option>CMPN</option>
+                                    <option>EXTC</option>
+                                    <option>I.T</option>
+
+                                </select>
+
+
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-xs-3 col-sm-3 col-md-3">
+                                <label>Class:</label>
+                            </div>
+
+                            <div class="col-xs-7 col-sm-7 col-md-7">
+                                <select class="selectpicker" name="class">
+                                    <option value="default">Select</option>
+                                    <option>A</option>
+                                    <option>B</option>
+
+                                </select>
+
+
+                            </div>
+
+                        </div>
+                        <br>
+
+                        <div class="row">
+                            <div class="col-xs-3 col-sm-3 col-md-3">
+                                <label>Pid:</label>
+                            </div>
+                            <div class="col-xs-7 col-sm-7 col-md-7">
+                                <div class="form-group">
+                                    <input type="number" name="pid" id="Pid" class="form-control input-sm" placeholder="Enter Pid"
+                                        required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-3 col-sm-3 col-md-3">
+                                <label>Password:</label>
+                            </div>
+                            <div class="col-xs-7 col-sm-7 col-md-7">
+                                <div class="form-group">
+                                    <input type="password" name="password" id="password" class="form-control input-sm"
+                                        placeholder="Password" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-3 col-sm-3 col-md-3">
+                                <label>Confirm password:</label>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="password" name="password_confirmation" id="password_confirmation"
+                                        class="form-control input-sm" placeholder="Type The Same Password Again"
+                                        required>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-xs-3 col-sm-3 col-md-3">
+                                <label>Phone Number:</label>
+                            </div>
+                            <div class="col-xs-7 col-sm-7 col-md-7">
+                                <div class="form-group">
+                                    <input type="number" name="phoneNum" id="phoneNum" class="form-control input-sm"
+                                        placeholder="Enter Phone Number" required>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <input type="submit" value="Register" name="submit" class="btn btn-info btn-block">
+
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal end-->
+
+</body>
+
+</html>
